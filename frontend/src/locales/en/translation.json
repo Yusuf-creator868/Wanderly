@@ -1,0 +1,371 @@
+{
+  "common": {
+    "search": "Search"
+  },
+  "nav": {
+    "profile": "Profile"
+  },
+  "hero": {
+    "badge": "Premium Travel Marketplace",
+    "title": "Discover Your Next Adventure",
+    "subtitle": "Explore premium tours, luxury hotels, and unforgettable travel experiences.",
+    "searchPlaceholder": "Search countries, cities, tours..."
+  },
+  "stats": {
+    "activeTours": "Active Tours",
+    "destinations": "Destinations",
+    "avgRating": "Avg. Rating",
+    "happyTravelers": "Happy Travelers"
+  },
+  "filters": {
+    "title": "Filters",
+    "clear": "Clear",
+    "category": "Category",
+    "priceRange": "Price Range",
+    "duration": "Duration",
+    "departure": "Departure",
+    "hotelStars": "Hotel Stars",
+    "mealPlan": "Meal Plan",
+    "flightIncluded": "Flight Included",
+    "flightIncludedDesc": "Show only tours with flights"
+  },
+  "categories": {
+    "luxury": "Luxury",
+    "adventure": "Adventure",
+    "beach": "Beach",
+    "honeymoon": "Honeymoon",
+    "family": "Family",
+    "cultural": "Cultural"
+  },
+  "mealPlans": {
+    "breakfast": "Breakfast Only",
+    "halfBoard": "Half Board",
+    "fullBoard": "Full Board",
+    "allInclusive": "All Inclusive"
+  },
+  "departure": {
+    "anytime": "Anytime",
+    "thisWeek": "This Week",
+    "nextWeek": "Next Week",
+    "thisMonth": "This Month",
+    "nextMonth": "Next Month",
+    "next3Months": "Next 3 Months"
+  },
+  "duration": {
+    "days_one": "{{count}} Day",
+    "days_other": "{{count}} Days"
+  },
+  "sort": {
+    "relevance": "Sort: Relevance",
+    "newest": "Newest",
+    "topRated": "Top Rated",
+    "priceLowHigh": "Price Low to High",
+    "priceHighLow": "Price High to Low"
+  },
+  "results": {
+    "toursFound_one": "{{count}} Tour Found",
+    "toursFound_other": "{{count}} Tours Found",
+    "subtitle": "Explore premium travel experiences",
+    "loading": "Loading...",
+    "noResults": "No tours found"
+  },
+  "sidebar": {
+    "tagline": "Ocean Travel",
+    "createTour": "Create Tour",
+    "settings": "Settings",
+    "settingsShort": "Setting",
+    "logout": "Logout",
+    "logoutShort": "Exit",
+    "nav": {
+      "dashboard": { "label": "Dashboard", "mobileLabel": "Home" },
+      "myTours": { "label": "My Tours", "mobileLabel": "Tours" },
+      "bookings": { "label": "Bookings", "mobileLabel": "Book" },
+      "travelers": { "label": "Travelers", "mobileLabel": "Users" },
+      "reviews": { "label": "Reviews", "mobileLabel": "Review" },
+      "analytics": { "label": "Analytics", "mobileLabel": "Stats" },
+      "profile": { "label": "Profile", "mobileLabel": "Profile" }
+    }
+  },
+  "topbar": {
+    "title": "Agency Dashboard",
+    "subtitle": "Manage your travel business",
+    "proAgency": "Pro Agency"
+  },
+  "login": {
+  "title": "Welcome Back",
+  "subtitle": "Sign in to access your bookings and account",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Password",
+  "rememberMe": "Remember me",
+  "forgotPassword": "Forgot password?",
+  "signIn": "Sign In",
+  "orContinueWith": "or continue with",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign up"
+},
+"register": {
+  "title": "Get Started",
+  "subtitle": "Join thousands of travelers and agencies on Wanderly",
+  "iAmA": "I am a:",
+  "traveler": "Traveler",
+  "agency": "Agency",
+  "agencyNameLabel": "Agency Name",
+  "fullNameLabel": "Full Name",
+  "agencyNamePlaceholder": "Your Agency Name",
+  "fullNamePlaceholder": "John Doe",
+  "emailLabel": "Email Address",
+  "passwordLabel": "Password",
+  "confirmPasswordLabel": "Confirm password",
+  "agreeToThe": "I agree to the",
+  "termsOfService": "Terms of Service",
+  "and": "and",
+  "privacyPolicy": "Privacy Policy",
+  "createAccount": "Create Account",
+  "alreadyHaveAccount": "Already have an account?",
+  "signIn": "Sign in",
+  "successAlert": "Registration successful!",
+  "failureAlert": "Registration failed!"
+},
+"landingHero": {
+  "badge": "Discover Premium Experiences",
+  "headingPart1": "Unforgettable",
+  "headingHighlight": "Travel",
+  "headingPart2": "Awaits",
+  "description": "Curated tours from verified agencies. Book premium experiences with confidence and create memories that last a lifetime.",
+  "exploreTours": "Explore Tours",
+  "partnerWithUs": "Partner With Us"
+},
+"features": {
+  "badge": "Why Wanderly",
+  "headingPart1": "Why Choose",
+  "subtitle": "Experience the difference with our commitment to quality, safety, and customer satisfaction",
+  "verifiedAgencies": {
+    "title": "Verified Agencies",
+    "description": "All tour operators are thoroughly vetted and verified for authenticity and quality"
+  },
+  "secureBooking": {
+    "title": "Secure Booking",
+    "description": "Industry-leading encryption and secure payment processing for peace of mind"
+  },
+  "expertSupport": {
+    "title": "Expert Support",
+    "description": "24/7 dedicated customer support team available in multiple languages"
+  },
+  "bestExperiences": {
+    "title": "Best Experiences",
+    "description": "Curated collection of premium tours and experiences from around the world"
+  }
+},
+"cta": {
+  "headingPart1": "Your next adventure",
+  "headingHighlight": "awaits",
+  "subtitle": "Join thousands of travelers exploring the world with confidence through Wanderly's curated experiences",
+  "exploreToursNow": "Explore Tours Now",
+  "partnerWithUs": "Partner with Us"
+},
+"footer": {
+  "brand": {
+    "tagline": "Discover premium travel experiences from verified agencies worldwide."
+  },
+  "sections": {
+    "product": {
+      "title": "Product",
+      "links": {
+        "browseTours": "Browse Tours",
+        "agencies": "Agencies",
+        "reviews": "Reviews",
+        "pricing": "Pricing"
+      }
+    },
+    "agency": {
+      "title": "Agency",
+      "links": {
+        "becomePartner": "Become Partner",
+        "dashboard": "Dashboard",
+        "resources": "Resources",
+        "verification": "Verification"
+      }
+    },
+    "support": {
+      "title": "Support",
+      "links": {
+        "helpCenter": "Help Center",
+        "contactUs": "Contact Us",
+        "faq": "FAQ",
+        "blog": "Blog"
+      }
+    },
+    "legal": {
+      "title": "Legal",
+      "links": {
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "cookiePolicy": "Cookie Policy",
+        "security": "Security"
+      }
+    }
+  },
+  "copyright": "© {{year}} Wanderly. All rights reserved.",
+  "bottomLinks": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  }
+},
+"card": {
+  "reviews_one": "{{count}} review",
+  "reviews_other": "{{count}} reviews",
+  "durationDaysNights": "{{days}} Days / {{nights}} Nights",
+  "seatsLeft_one": "{{count}} seat left",
+  "seatsLeft_other": "{{count}} seats left",
+  "flightIncluded": "Flight Included",
+  "mealsIncluded": "Meals Included",
+  "tourGuide": "Tour Guide",
+  "transportIncluded": "Transport Included",
+  "from": "From",
+  "perPerson": "/person",
+  "viewTour": "View Tour"
+},
+"cards": {
+  "nights_one": "{{count}} night",
+  "nights_other": "{{count}} nights"
+},
+"tourDetail": {
+  "showAllPhotos": "Show all photos",
+  "hidePhotos": "Hide photos",
+  "viewPhotos": "View photos",
+  "almostFull": "almost full",
+  "close": "Close",
+  "previousImage": "Previous image",
+  "nextImage": "Next image",
+  "loadingTour": "Loading tour…",
+  "shareText": "Check out this tour on Wanderly!",
+  "linkCopied": "Tour link copied!",
+  "share": "Share",
+  "durationLabel": "Duration",
+  "nightsLabel": "Nights",
+  "totalSeatsLabel": "Total Seats",
+  "daysCount_one": "{{count}} day",
+  "daysCount_other": "{{count}} days",
+  "chooseADeparture": "Choose a departure",
+  "overview": "Overview",
+  "flights": "Flights",
+  "hotels": "Hotels",
+  "meals": "Meals",
+  "privateCar": "Private car",
+  "localGuide": "Local guide",
+  "whereYoullStay": "Where you'll stay",
+  "whereYoullStaySubtitle": "Every stop is handpicked for the view as much as the comfort.",
+  "whatsIncluded": "What's included",
+  "notIncluded": "Not included",
+  "contact": "Contact",
+  "agencyCannotBookAlert": "Agency accounts cannot book tours. Please use a traveler account.",
+  "reserveThisTrip": "Reserve this trip"
+},
+"booking": {
+  "steps": {
+    "travelers": "Travelers",
+    "travelerInformation": "Traveler Information",
+    "confirmation": "Confirmation"
+  },
+  "howManyTravelers": "How many travelers?",
+  "travelersLabel": "Travelers",
+  "chooseYourHotel": "Choose your hotel",
+  "travelerNumber": "Traveler {{number}}",
+  "lead": "lead",
+  "fullName": "Full name",
+  "passportNumber": "Passport number",
+  "nationality": "Nationality",
+  "dateOfBirth": "Date of birth",
+  "paymentMethod": "Payment method",
+  "cardNumber": "Card number",
+  "expiry": "Expiry (MM/YY)",
+  "cvv": "CVV",
+  "tripReserved": "Your trip is reserved",
+  "agencyWillFollowUp": "Your agency will follow up with final documents.",
+  "departure": "Departure",
+  "time": "Time",
+  "hotel": "Hotel",
+  "basePrice": "Base price",
+  "total": "Total",
+  "freeCancellation": "Free cancellation within 30 days",
+  "securePayment": "Secure payment",
+  "verifiedAgency": "Verified agency",
+  "instantConfirmation": "Instant confirmation",
+  "back": "Back",
+  "processing": "Processing…",
+  "confirmBooking": "Confirm Booking",
+  "continueButton": "Continue"
+},
+"myTours": {
+  "title": "My Tours",
+  "subtitle": "Manage your published tours and drafts",
+  "publishedTours": "Published Tours",
+  "draftTours": "Draft Tours",
+  "total_one": "{{count}} total",
+  "total_other": "{{count}} total",
+  "columns": {
+    "tour": "Tour",
+    "location": "Location",
+    "duration": "Duration",
+    "seats": "Seats",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "editTour": "Edit Tour",
+  "edit": "Edit",
+  "preview": "Preview",
+  "delete": "Delete",
+  "continueEditing": "Continue Editing",
+  "noPublishedTours": "No published tours yet.",
+  "noDrafts": "No drafts yet.",
+  "deleteTourTitle": "Delete Tour?",
+  "deleteTourWarning": "Are you sure you want to delete this tour? This action cannot be undone.",
+  "cancel": "Cancel"
+},
+"bookingsPage": {
+  "title": "Bookings",
+  "subtitle": "Review and manage traveler booking requests",
+  "totalRequests": "Total Requests",
+  "status": {
+    "all": "All",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "cancelled": "Cancelled"
+  },
+  "columns": {
+    "traveler": "Traveler",
+    "tour": "Tour",
+    "hotel": "Hotel",
+    "departure": "Departure",
+    "travelers": "Travelers",
+    "totalPrice": "Total Price",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "loadingBookings": "Loading bookings...",
+  "approve": "Approve",
+  "reject": "Reject",
+  "noActionNeeded": "No action needed",
+  "noBookingsMatch": "No bookings match this filter.",
+  "total": "Total",
+  "bookingNumber": "Booking #{{id}}",
+  "requestedAt": "Requested {{date}}",
+  "trip": "Trip",
+  "availableSeats": "Available Seats",
+  "schedule": "Schedule",
+  "departs": "Departs",
+  "returns": "Returns",
+  "travelerInformation": "Traveler Information",
+  "notAvailable": "N/A",
+  "travelerOf": "Traveler {{number}} of {{total}}",
+  "birthDate": "Birth Date",
+  "noTravelerInfo": "No traveler information available for this booking.",
+  "approveBookingTitle": "Approve Booking?",
+  "rejectBookingTitle": "Reject Booking?",
+  "approveBookingDescription": "This will confirm the request and notify the traveler.",
+  "rejectBookingDescription": "This will cancel the request and notify the traveler.",
+  "somethingWentWrong": "Something went wrong. Please try again."
+}
+}

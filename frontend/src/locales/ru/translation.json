@@ -1,0 +1,385 @@
+{
+  "common": {
+    "search": "Поиск"
+  },
+  "nav": {
+    "profile": "Профиль"
+  },
+  "hero": {
+    "badge": "Премиальный туристический маркетплейс",
+    "title": "Откройте своё следующее приключение",
+    "subtitle": "Изучайте премиальные туры, роскошные отели и незабываемые путешествия.",
+    "searchPlaceholder": "Поиск стран, городов, туров..."
+  },
+  "stats": {
+    "activeTours": "Активных туров",
+    "destinations": "Направлений",
+    "avgRating": "Средний рейтинг",
+    "happyTravelers": "Довольных туристов"
+  },
+  "filters": {
+    "title": "Фильтры",
+    "clear": "Очистить",
+    "category": "Категория",
+    "priceRange": "Диапазон цен",
+    "duration": "Продолжительность",
+    "departure": "Дата выезда",
+    "hotelStars": "Звёзды отеля",
+    "mealPlan": "Питание",
+    "flightIncluded": "С перелётом",
+    "flightIncludedDesc": "Показывать только туры с перелётом"
+  },
+  "categories": {
+    "luxury": "Люкс",
+    "adventure": "Приключения",
+    "beach": "Пляжный отдых",
+    "honeymoon": "Медовый месяц",
+    "family": "Семейный отдых",
+    "cultural": "Культурный отдых"
+  },
+  "mealPlans": {
+    "breakfast": "Только завтрак",
+    "halfBoard": "Полупансион",
+    "fullBoard": "Полный пансион",
+    "allInclusive": "Всё включено"
+  },
+  "departure": {
+    "anytime": "В любое время",
+    "thisWeek": "На этой неделе",
+    "nextWeek": "На следующей неделе",
+    "thisMonth": "В этом месяце",
+    "nextMonth": "В следующем месяце",
+    "next3Months": "В ближайшие 3 месяца"
+  },
+  "duration": {
+    "days_one": "{{count}} день",
+    "days_few": "{{count}} дня",
+    "days_many": "{{count}} дней",
+    "days_other": "{{count}} дня"
+  },
+  "sort": {
+    "relevance": "Сортировка: По релевантности",
+    "newest": "Новые",
+    "topRated": "Лучшие по рейтингу",
+    "priceLowHigh": "Цена: по возрастанию",
+    "priceHighLow": "Цена: по убыванию"
+  },
+  "results": {
+    "toursFound_one": "Найден {{count}} тур",
+    "toursFound_few": "Найдено {{count}} тура",
+    "toursFound_many": "Найдено {{count}} туров",
+    "toursFound_other": "Найдено {{count}} тура",
+    "subtitle": "Изучайте премиальные туристические предложения",
+    "loading": "Загрузка...",
+    "noResults": "Туры не найдены"
+  },
+  "sidebar": {
+    "tagline": "Ocean Travel",
+    "createTour": "Создать тур",
+    "settings": "Настройки",
+    "settingsShort": "Настройки",
+    "logout": "Выйти",
+    "logoutShort": "Выход",
+    "nav": {
+      "dashboard": { "label": "Панель управления", "mobileLabel": "Главная" },
+      "myTours": { "label": "Мои туры", "mobileLabel": "Туры" },
+      "bookings": { "label": "Бронирования", "mobileLabel": "Брони" },
+      "travelers": { "label": "Туристы", "mobileLabel": "Гости" },
+      "reviews": { "label": "Отзывы", "mobileLabel": "Отзыв" },
+      "analytics": { "label": "Аналитика", "mobileLabel": "Статистика" },
+      "profile": { "label": "Профиль", "mobileLabel": "Профиль" }
+    }
+  },
+  "topbar": {
+    "title": "Панель агентства",
+    "subtitle": "Управляйте своим туристическим бизнесом",
+    "proAgency": "Pro Агентство"
+  },
+  "login": {
+  "title": "С возвращением",
+  "subtitle": "Войдите, чтобы получить доступ к своим бронированиям и аккаунту",
+  "emailLabel": "Электронная почта",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Пароль",
+  "rememberMe": "Запомнить меня",
+  "forgotPassword": "Забыли пароль?",
+  "signIn": "Войти",
+  "orContinueWith": "или продолжить с",
+  "noAccount": "Нет аккаунта?",
+  "signUp": "Зарегистрироваться"
+},
+"register": {
+  "title": "Начать",
+  "subtitle": "Присоединяйтесь к тысячам путешественников и агентств на Wanderly",
+  "iAmA": "Я являюсь:",
+  "traveler": "Путешественник",
+  "agency": "Агентство",
+  "agencyNameLabel": "Название агентства",
+  "fullNameLabel": "Полное имя",
+  "agencyNamePlaceholder": "Название вашего агентства",
+  "fullNamePlaceholder": "Иван Иванов",
+  "emailLabel": "Электронная почта",
+  "passwordLabel": "Пароль",
+  "confirmPasswordLabel": "Подтвердите пароль",
+  "agreeToThe": "Я согласен с",
+  "termsOfService": "Условиями использования",
+  "and": "и",
+  "privacyPolicy": "Политикой конфиденциальности",
+  "createAccount": "Создать аккаунт",
+  "alreadyHaveAccount": "Уже есть аккаунт?",
+  "signIn": "Войти",
+  "successAlert": "Регистрация прошла успешно!",
+  "failureAlert": "Ошибка регистрации!"
+},
+"landingHero": {
+  "badge": "Откройте премиальные впечатления",
+  "headingPart1": "Незабываемое",
+  "headingHighlight": "Путешествие",
+  "headingPart2": "ждёт вас",
+  "description": "Кураторские туры от проверенных агентств. Бронируйте премиальные впечатления с уверенностью и создавайте воспоминания на всю жизнь.",
+  "exploreTours": "Смотреть туры",
+  "partnerWithUs": "Стать партнёром"
+},
+"features": {
+  "badge": "Почему Wanderly",
+  "headingPart1": "Почему выбирают",
+  "subtitle": "Ощутите разницу благодаря нашей приверженности качеству, безопасности и удовлетворённости клиентов",
+  "verifiedAgencies": {
+    "title": "Проверенные агентства",
+    "description": "Все туроператоры тщательно проверяются на подлинность и качество"
+  },
+  "secureBooking": {
+    "title": "Безопасное бронирование",
+    "description": "Передовое шифрование и безопасная обработка платежей для вашего спокойствия"
+  },
+  "expertSupport": {
+    "title": "Экспертная поддержка",
+    "description": "Круглосуточная служба поддержки клиентов, доступная на нескольких языках"
+  },
+  "bestExperiences": {
+    "title": "Лучшие впечатления",
+    "description": "Кураторская подборка премиальных туров и впечатлений со всего мира"
+  }
+},
+"cta": {
+  "headingPart1": "Ваше следующее приключение",
+  "headingHighlight": "уже ждёт",
+  "subtitle": "Присоединяйтесь к тысячам путешественников, уверенно исследующих мир благодаря кураторским впечатлениям от Wanderly",
+  "exploreToursNow": "Смотреть туры",
+  "partnerWithUs": "Стать партнёром"
+},
+"footer": {
+  "brand": {
+    "tagline": "Откройте премиальные туристические впечатления от проверенных агентств по всему миру."
+  },
+  "sections": {
+    "product": {
+      "title": "Продукт",
+      "links": {
+        "browseTours": "Смотреть туры",
+        "agencies": "Агентства",
+        "reviews": "Отзывы",
+        "pricing": "Цены"
+      }
+    },
+    "agency": {
+      "title": "Агентствам",
+      "links": {
+        "becomePartner": "Стать партнёром",
+        "dashboard": "Панель управления",
+        "resources": "Ресурсы",
+        "verification": "Верификация"
+      }
+    },
+    "support": {
+      "title": "Поддержка",
+      "links": {
+        "helpCenter": "Центр помощи",
+        "contactUs": "Связаться с нами",
+        "faq": "Часто задаваемые вопросы",
+        "blog": "Блог"
+      }
+    },
+    "legal": {
+      "title": "Правовая информация",
+      "links": {
+        "privacyPolicy": "Политика конфиденциальности",
+        "termsOfService": "Условия использования",
+        "cookiePolicy": "Политика использования файлов cookie",
+        "security": "Безопасность"
+      }
+    }
+  },
+  "copyright": "© {{year}} Wanderly. Все права защищены.",
+  "bottomLinks": {
+    "privacy": "Конфиденциальность",
+    "terms": "Условия",
+    "cookies": "Cookie"
+  }
+},
+"card": {
+  "reviews_one": "{{count}} отзыв",
+  "reviews_few": "{{count}} отзыва",
+  "reviews_many": "{{count}} отзывов",
+  "reviews_other": "{{count}} отзыва",
+  "durationDaysNights": "{{days}} дн. / {{nights}} ноч.",
+  "seatsLeft_one": "осталось {{count}} место",
+  "seatsLeft_few": "осталось {{count}} места",
+  "seatsLeft_many": "осталось {{count}} мест",
+  "seatsLeft_other": "осталось {{count}} места",
+  "flightIncluded": "Перелёт включён",
+  "mealsIncluded": "Питание включено",
+  "tourGuide": "Гид",
+  "transportIncluded": "Транспорт включён",
+  "from": "От",
+  "perPerson": "/чел.",
+  "viewTour": "Смотреть тур"
+},
+"cards": {
+  "nights_one": "{{count}} ночь",
+  "nights_few": "{{count}} ночи",
+  "nights_many": "{{count}} ночей",
+  "nights_other": "{{count}} ночи"
+},
+"tourDetail": {
+  "showAllPhotos": "Показать все фото",
+  "hidePhotos": "Скрыть фото",
+  "viewPhotos": "Смотреть фото",
+  "almostFull": "почти заполнено",
+  "close": "Закрыть",
+  "previousImage": "Предыдущее фото",
+  "nextImage": "Следующее фото",
+  "loadingTour": "Загрузка тура…",
+  "shareText": "Посмотрите этот тур на Wanderly!",
+  "linkCopied": "Ссылка на тур скопирована!",
+  "share": "Поделиться",
+  "durationLabel": "Продолжительность",
+  "nightsLabel": "Ночей",
+  "totalSeatsLabel": "Всего мест",
+  "daysCount_one": "{{count}} день",
+  "daysCount_few": "{{count}} дня",
+  "daysCount_many": "{{count}} дней",
+  "daysCount_other": "{{count}} дня",
+  "chooseADeparture": "Выберите дату выезда",
+  "overview": "Обзор",
+  "flights": "Перелёты",
+  "hotels": "Отели",
+  "meals": "Питание",
+  "privateCar": "Личный автомобиль",
+  "localGuide": "Местный гид",
+  "whereYoullStay": "Где вы остановитесь",
+  "whereYoullStaySubtitle": "Каждая остановка выбрана как за вид, так и за комфорт.",
+  "whatsIncluded": "Что включено",
+  "notIncluded": "Не включено",
+  "contact": "Связаться",
+  "agencyCannotBookAlert": "Аккаунты агентств не могут бронировать туры. Пожалуйста, используйте аккаунт путешественника.",
+  "reserveThisTrip": "Забронировать поездку"
+},
+"booking": {
+  "steps": {
+    "travelers": "Путешественники",
+    "travelerInformation": "Данные путешественников",
+    "confirmation": "Подтверждение"
+  },
+  "howManyTravelers": "Сколько путешественников?",
+  "travelersLabel": "Путешественники",
+  "chooseYourHotel": "Выберите отель",
+  "travelerNumber": "Путешественник {{number}}",
+  "lead": "основной",
+  "fullName": "Полное имя",
+  "passportNumber": "Номер паспорта",
+  "nationality": "Гражданство",
+  "dateOfBirth": "Дата рождения",
+  "paymentMethod": "Способ оплаты",
+  "cardNumber": "Номер карты",
+  "expiry": "Срок действия (ММ/ГГ)",
+  "cvv": "CVV",
+  "tripReserved": "Ваша поездка забронирована",
+  "agencyWillFollowUp": "Агентство свяжется с вами по поводу окончательных документов.",
+  "departure": "Отправление",
+  "time": "Время",
+  "hotel": "Отель",
+  "basePrice": "Базовая цена",
+  "total": "Итого",
+  "freeCancellation": "Бесплатная отмена в течение 30 дней",
+  "securePayment": "Безопасная оплата",
+  "verifiedAgency": "Проверенное агентство",
+  "instantConfirmation": "Мгновенное подтверждение",
+  "back": "Назад",
+  "processing": "Обработка…",
+  "confirmBooking": "Подтвердить бронирование",
+  "continueButton": "Продолжить"
+},
+"myTours": {
+  "title": "Мои туры",
+  "subtitle": "Управляйте опубликованными турами и черновиками",
+  "publishedTours": "Опубликованные туры",
+  "draftTours": "Черновики туров",
+  "total_one": "{{count}} всего",
+  "total_few": "{{count}} всего",
+  "total_many": "{{count}} всего",
+  "total_other": "{{count}} всего",
+  "columns": {
+    "tour": "Тур",
+    "location": "Локация",
+    "duration": "Продолжительность",
+    "seats": "Места",
+    "status": "Статус",
+    "actions": "Действия"
+  },
+  "editTour": "Редактировать тур",
+  "edit": "Изменить",
+  "preview": "Просмотр",
+  "delete": "Удалить",
+  "continueEditing": "Продолжить редактирование",
+  "noPublishedTours": "Опубликованных туров пока нет.",
+  "noDrafts": "Черновиков пока нет.",
+  "deleteTourTitle": "Удалить тур?",
+  "deleteTourWarning": "Вы уверены, что хотите удалить этот тур? Это действие невозможно отменить.",
+  "cancel": "Отмена"
+},
+"bookingsPage": {
+  "title": "Бронирования",
+  "subtitle": "Просматривайте и управляйте заявками на бронирование",
+  "totalRequests": "Всего заявок",
+  "status": {
+    "all": "Все",
+    "pending": "В ожидании",
+    "confirmed": "Подтверждено",
+    "cancelled": "Отменено"
+  },
+  "columns": {
+    "traveler": "Путешественник",
+    "tour": "Тур",
+    "hotel": "Отель",
+    "departure": "Отправление",
+    "travelers": "Путешественники",
+    "totalPrice": "Итоговая цена",
+    "status": "Статус",
+    "actions": "Действия"
+  },
+  "loadingBookings": "Загрузка бронирований...",
+  "approve": "Подтвердить",
+  "reject": "Отклонить",
+  "noActionNeeded": "Действие не требуется",
+  "noBookingsMatch": "Нет бронирований, соответствующих этому фильтру.",
+  "total": "Итого",
+  "bookingNumber": "Бронирование №{{id}}",
+  "requestedAt": "Запрошено {{date}}",
+  "trip": "Поездка",
+  "availableSeats": "Свободные места",
+  "schedule": "Расписание",
+  "departs": "Отправление",
+  "returns": "Возвращение",
+  "travelerInformation": "Информация о путешественнике",
+  "notAvailable": "Н/Д",
+  "travelerOf": "Путешественник {{number}} из {{total}}",
+  "birthDate": "Дата рождения",
+  "noTravelerInfo": "Информация о путешественниках для этого бронирования отсутствует.",
+  "approveBookingTitle": "Подтвердить бронирование?",
+  "rejectBookingTitle": "Отклонить бронирование?",
+  "approveBookingDescription": "Это подтвердит заявку и уведомит путешественника.",
+  "rejectBookingDescription": "Это отменит заявку и уведомит путешественника.",
+  "somethingWentWrong": "Что-то пошло не так. Попробуйте ещё раз."
+}
+}

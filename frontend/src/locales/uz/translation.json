@@ -1,0 +1,364 @@
+{
+  "common": {
+    "search": "Qidiruv"
+  },
+  "nav": {
+    "profile": "Profil"
+  },
+  "hero": {
+    "badge": "Premium sayohat bozori",
+    "title": "Keyingi sarguzashtingizni kashf eting",
+    "subtitle": "Premium turlar, hashamatli mehmonxonalar va unutilmas sayohat tajribalarini kashf eting.",
+    "searchPlaceholder": "Davlatlar, shaharlar, turlarni qidiring..."
+  },
+  "stats": {
+    "activeTours": "Faol turlar",
+    "destinations": "Yo'nalishlar",
+    "avgRating": "O'rtacha reyting",
+    "happyTravelers": "Mamnun sayohatchilar"
+  },
+  "filters": {
+    "title": "Filtrlar",
+    "clear": "Tozalash",
+    "category": "Kategoriya",
+    "priceRange": "Narx oralig'i",
+    "duration": "Davomiyligi",
+    "departure": "Jo'nash sanasi",
+    "hotelStars": "Mehmonxona yulduzlari",
+    "mealPlan": "Ovqatlanish rejasi",
+    "flightIncluded": "Parvoz kiritilgan",
+    "flightIncludedDesc": "Faqat parvozli turlarni ko'rsat"
+  },
+  "categories": {
+    "luxury": "Hashamatli",
+    "adventure": "Sarguzasht",
+    "beach": "Plyaj",
+    "honeymoon": "Asal oyi",
+    "family": "Oilaviy",
+    "cultural": "Madaniy"
+  },
+  "mealPlans": {
+    "breakfast": "Faqat nonushta",
+    "halfBoard": "Yarim pansion",
+    "fullBoard": "To'liq pansion",
+    "allInclusive": "Hammasi kiritilgan"
+  },
+  "departure": {
+    "anytime": "Istalgan vaqt",
+    "thisWeek": "Shu hafta",
+    "nextWeek": "Keyingi hafta",
+    "thisMonth": "Shu oy",
+    "nextMonth": "Keyingi oy",
+    "next3Months": "Keyingi 3 oy"
+  },
+  "duration": {
+    "days_other": "{{count}} kun"
+  },
+  "sort": {
+    "relevance": "Saralash: Moslik bo'yicha",
+    "newest": "Eng yangi",
+    "topRated": "Eng yuqori baholangan",
+    "priceLowHigh": "Narx: pastdan yuqoriga",
+    "priceHighLow": "Narx: yuqoridan pastga"
+  },
+  "results": {
+    "toursFound_other": "{{count}} tur topildi",
+    "subtitle": "Premium sayohat tajribalarini kashf eting",
+    "loading": "Yuklanmoqda...",
+    "noResults": "Turlar topilmadi"
+  },
+  "sidebar": {
+    "tagline": "Ocean Travel",
+    "createTour": "Tur yaratish",
+    "settings": "Sozlamalar",
+    "settingsShort": "Sozlama",
+    "logout": "Chiqish",
+    "logoutShort": "Chiqish",
+    "nav": {
+      "dashboard": { "label": "Boshqaruv paneli", "mobileLabel": "Bosh sahifa" },
+      "myTours": { "label": "Mening turlarim", "mobileLabel": "Turlar" },
+      "bookings": { "label": "Bandlar", "mobileLabel": "Band" },
+      "travelers": { "label": "Sayohatchilar", "mobileLabel": "Mijozlar" },
+      "reviews": { "label": "Sharhlar", "mobileLabel": "Sharh" },
+      "analytics": { "label": "Analitika", "mobileLabel": "Statistika" },
+      "profile": { "label": "Profil", "mobileLabel": "Profil" }
+    }
+  },
+  "topbar": {
+    "title": "Agentlik paneli",
+    "subtitle": "Sayohat biznesingizni boshqaring",
+    "proAgency": "Pro agentlik"
+  },
+  "login": {
+  "title": "Xush kelibsiz",
+  "subtitle": "Bronlaringiz va hisobingizga kirish uchun tizimga kiring",
+  "emailLabel": "Elektron pochta",
+  "emailPlaceholder": "you@example.com",
+  "passwordLabel": "Parol",
+  "rememberMe": "Meni eslab qol",
+  "forgotPassword": "Parolni unutdingizmi?",
+  "signIn": "Kirish",
+  "orContinueWith": "yoki davom eting",
+  "noAccount": "Hisobingiz yo'qmi?",
+  "signUp": "Ro'yxatdan o'tish"
+},
+"register": {
+  "title": "Boshlash",
+  "subtitle": "Wanderly'dagi minglab sayohatchilar va agentliklarga qo'shiling",
+  "iAmA": "Men:",
+  "traveler": "Sayohatchi",
+  "agency": "Agentlik",
+  "agencyNameLabel": "Agentlik nomi",
+  "fullNameLabel": "To'liq ism",
+  "agencyNamePlaceholder": "Agentligingiz nomi",
+  "fullNamePlaceholder": "Jasur Karimov",
+  "emailLabel": "Elektron pochta",
+  "passwordLabel": "Parol",
+  "confirmPasswordLabel": "Parolni tasdiqlang",
+  "agreeToThe": "Men",
+  "termsOfService": "Foydalanish shartlari",
+  "and": "va",
+  "privacyPolicy": "Maxfiylik siyosati",
+  "createAccount": "Hisob yaratish",
+  "alreadyHaveAccount": "Hisobingiz bormi?",
+  "signIn": "Kirish",
+  "successAlert": "Ro'yxatdan o'tish muvaffaqiyatli!",
+  "failureAlert": "Ro'yxatdan o'tishda xatolik!"
+},
+"landingHero": {
+  "badge": "Premium tajribalarni kashf eting",
+  "headingPart1": "Unutilmas",
+  "headingHighlight": "sayohat",
+  "headingPart2": "sizni kutmoqda",
+  "description": "Tasdiqlangan agentliklardan tanlangan turlar. Ishonch bilan premium tajribalarni bron qiling va butun umr esda qoladigan xotiralar yarating.",
+  "exploreTours": "Turlarni ko'rish",
+  "partnerWithUs": "Hamkor bo'lish"
+},
+"features": {
+  "badge": "Nega Wanderly",
+  "headingPart1": "Nega aynan",
+  "subtitle": "Sifat, xavfsizlik va mijozlar mamnuniyatiga bo'lgan sadoqatimiz bilan farqni his eting",
+  "verifiedAgencies": {
+    "title": "Tasdiqlangan agentliklar",
+    "description": "Barcha tur operatorlari haqiqiylik va sifat uchun sinchkovlik bilan tekshiriladi"
+  },
+  "secureBooking": {
+    "title": "Xavfsiz bron qilish",
+    "description": "Xotirjamlik uchun ilg'or shifrlash va xavfsiz to'lov tizimi"
+  },
+  "expertSupport": {
+    "title": "Mutaxassis yordami",
+    "description": "Bir necha tillarda mavjud bo'lgan 24/7 mijozlarni qo'llab-quvvatlash xizmati"
+  },
+  "bestExperiences": {
+    "title": "Eng yaxshi tajribalar",
+    "description": "Butun dunyo bo'ylab premium turlar va tajribalarning tanlangan to'plami"
+  }
+},
+"cta": {
+  "headingPart1": "Keyingi sarguzashtingiz",
+  "headingHighlight": "sizni kutmoqda",
+  "subtitle": "Wanderly tomonidan tanlangan tajribalar orqali dunyoni ishonch bilan kashf etayotgan minglab sayohatchilarga qo'shiling",
+  "exploreToursNow": "Hozir turlarni ko'rish",
+  "partnerWithUs": "Hamkor bo'lish"
+},
+"footer": {
+  "brand": {
+    "tagline": "Butun dunyo bo'ylab tasdiqlangan agentliklarning premium sayohat tajribalarini kashf eting."
+  },
+  "sections": {
+    "product": {
+      "title": "Mahsulot",
+      "links": {
+        "browseTours": "Turlarni ko'rish",
+        "agencies": "Agentliklar",
+        "reviews": "Sharhlar",
+        "pricing": "Narxlar"
+      }
+    },
+    "agency": {
+      "title": "Agentlik",
+      "links": {
+        "becomePartner": "Hamkor bo'lish",
+        "dashboard": "Boshqaruv paneli",
+        "resources": "Resurslar",
+        "verification": "Tasdiqlash"
+      }
+    },
+    "support": {
+      "title": "Yordam",
+      "links": {
+        "helpCenter": "Yordam markazi",
+        "contactUs": "Biz bilan bog'lanish",
+        "faq": "Ko'p so'raladigan savollar",
+        "blog": "Blog"
+      }
+    },
+    "legal": {
+      "title": "Huquqiy",
+      "links": {
+        "privacyPolicy": "Maxfiylik siyosati",
+        "termsOfService": "Foydalanish shartlari",
+        "cookiePolicy": "Cookie siyosati",
+        "security": "Xavfsizlik"
+      }
+    }
+  },
+  "copyright": "© {{year}} Wanderly. Barcha huquqlar himoyalangan.",
+  "bottomLinks": {
+    "privacy": "Maxfiylik",
+    "terms": "Shartlar",
+    "cookies": "Cookie"
+  }
+},
+"card": {
+  "reviews_other": "{{count}} sharh",
+  "durationDaysNights": "{{days}} kun / {{nights}} tun",
+  "seatsLeft_other": "{{count}} joy qoldi",
+  "flightIncluded": "Parvoz kiritilgan",
+  "mealsIncluded": "Ovqatlanish kiritilgan",
+  "tourGuide": "Gid",
+  "transportIncluded": "Transport kiritilgan",
+  "from": "Dan",
+  "perPerson": "/kishi",
+  "viewTour": "Turni ko'rish"
+},
+"cards": {
+  "nights_other": "{{count}} tun"
+},
+"tourDetail": {
+  "showAllPhotos": "Barcha suratlarni ko'rish",
+  "hidePhotos": "Suratlarni yashirish",
+  "viewPhotos": "Suratlarni ko'rish",
+  "almostFull": "deyarli to'lgan",
+  "close": "Yopish",
+  "previousImage": "Oldingi surat",
+  "nextImage": "Keyingi surat",
+  "loadingTour": "Tur yuklanmoqda…",
+  "shareText": "Wanderly'dagi bu turni ko'rib chiqing!",
+  "linkCopied": "Tur havolasi nusxalandi!",
+  "share": "Ulashish",
+  "durationLabel": "Davomiyligi",
+  "nightsLabel": "Tunlar",
+  "totalSeatsLabel": "Jami joylar",
+  "daysCount_other": "{{count}} kun",
+  "chooseADeparture": "Jo'nash sanasini tanlang",
+  "overview": "Umumiy ma'lumot",
+  "flights": "Parvozlar",
+  "hotels": "Mehmonxonalar",
+  "meals": "Ovqatlanish",
+  "privateCar": "Shaxsiy avtomobil",
+  "localGuide": "Mahalliy gid",
+  "whereYoullStay": "Qayerda turasiz",
+  "whereYoullStaySubtitle": "Har bir to'xtash joyi ham manzara, ham qulaylik uchun tanlangan.",
+  "whatsIncluded": "Nima kiritilgan",
+  "notIncluded": "Kiritilmagan",
+  "contact": "Bog'lanish",
+  "agencyCannotBookAlert": "Agentlik hisoblari turlarni bron qila olmaydi. Iltimos, sayohatchi hisobidan foydalaning.",
+  "reserveThisTrip": "Safarni bron qilish"
+},
+"booking": {
+  "steps": {
+    "travelers": "Sayohatchilar",
+    "travelerInformation": "Sayohatchi ma'lumotlari",
+    "confirmation": "Tasdiqlash"
+  },
+  "howManyTravelers": "Nechta sayohatchi?",
+  "travelersLabel": "Sayohatchilar",
+  "chooseYourHotel": "Mehmonxonangizni tanlang",
+  "travelerNumber": "{{number}}-sayohatchi",
+  "lead": "asosiy",
+  "fullName": "To'liq ism",
+  "passportNumber": "Pasport raqami",
+  "nationality": "Fuqarolik",
+  "dateOfBirth": "Tug'ilgan sana",
+  "paymentMethod": "To'lov usuli",
+  "cardNumber": "Karta raqami",
+  "expiry": "Amal qilish muddati (OO/YY)",
+  "cvv": "CVV",
+  "tripReserved": "Safaringiz bron qilindi",
+  "agencyWillFollowUp": "Agentlik yakuniy hujjatlar bo'yicha siz bilan bog'lanadi.",
+  "departure": "Jo'nash",
+  "time": "Vaqt",
+  "hotel": "Mehmonxona",
+  "basePrice": "Asosiy narx",
+  "total": "Jami",
+  "freeCancellation": "30 kun ichida bepul bekor qilish",
+  "securePayment": "Xavfsiz to'lov",
+  "verifiedAgency": "Tasdiqlangan agentlik",
+  "instantConfirmation": "Bir zumda tasdiqlash",
+  "back": "Orqaga",
+  "processing": "Ishlanmoqda…",
+  "confirmBooking": "Bronni tasdiqlash",
+  "continueButton": "Davom etish"
+},
+"myTours": {
+  "title": "Mening turlarim",
+  "subtitle": "Chop etilgan turlaringiz va qoralamalarni boshqaring",
+  "publishedTours": "Chop etilgan turlar",
+  "draftTours": "Qoralama turlar",
+  "total_other": "jami {{count}}",
+  "columns": {
+    "tour": "Tur",
+    "location": "Joylashuv",
+    "duration": "Davomiyligi",
+    "seats": "Joylar",
+    "status": "Holati",
+    "actions": "Amallar"
+  },
+  "editTour": "Turni tahrirlash",
+  "edit": "Tahrirlash",
+  "preview": "Ko'rish",
+  "delete": "O'chirish",
+  "continueEditing": "Tahrirlashni davom ettirish",
+  "noPublishedTours": "Hozircha chop etilgan turlar yo'q.",
+  "noDrafts": "Hozircha qoralamalar yo'q.",
+  "deleteTourTitle": "Turni o'chirasizmi?",
+  "deleteTourWarning": "Haqiqatan ham bu turni o'chirmoqchimisiz? Bu amalni ortga qaytarib bo'lmaydi.",
+  "cancel": "Bekor qilish"
+},
+"bookingsPage": {
+  "title": "Bronlar",
+  "subtitle": "Sayohatchilarning bron so'rovlarini ko'rib chiqing va boshqaring",
+  "totalRequests": "Jami so'rovlar",
+  "status": {
+    "all": "Barchasi",
+    "pending": "Kutilmoqda",
+    "confirmed": "Tasdiqlangan",
+    "cancelled": "Bekor qilingan"
+  },
+  "columns": {
+    "traveler": "Sayohatchi",
+    "tour": "Tur",
+    "hotel": "Mehmonxona",
+    "departure": "Jo'nash",
+    "travelers": "Sayohatchilar",
+    "totalPrice": "Jami narx",
+    "status": "Holati",
+    "actions": "Amallar"
+  },
+  "loadingBookings": "Bronlar yuklanmoqda...",
+  "approve": "Tasdiqlash",
+  "reject": "Rad etish",
+  "noActionNeeded": "Amal talab qilinmaydi",
+  "noBookingsMatch": "Bu filtrga mos bronlar topilmadi.",
+  "total": "Jami",
+  "bookingNumber": "Bron №{{id}}",
+  "requestedAt": "So'ralgan sana: {{date}}",
+  "trip": "Safar",
+  "availableSeats": "Bo'sh joylar",
+  "schedule": "Jadval",
+  "departs": "Jo'nash",
+  "returns": "Qaytish",
+  "travelerInformation": "Sayohatchi ma'lumotlari",
+  "notAvailable": "Noma'lum",
+  "travelerOf": "{{number}}-sayohatchi, jami {{total}}",
+  "birthDate": "Tug'ilgan sana",
+  "noTravelerInfo": "Bu bron uchun sayohatchi ma'lumotlari mavjud emas.",
+  "approveBookingTitle": "Bronni tasdiqlaysizmi?",
+  "rejectBookingTitle": "Bronni rad etasizmi?",
+  "approveBookingDescription": "Bu so'rovni tasdiqlaydi va sayohatchiga xabar beradi.",
+  "rejectBookingDescription": "Bu so'rovni bekor qiladi va sayohatchiga xabar beradi.",
+  "somethingWentWrong": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+}
+}
