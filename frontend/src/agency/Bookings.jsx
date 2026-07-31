@@ -150,8 +150,8 @@ export default function BookingsPage() {
 
 
     useEffect(() => {
-        const socket = new WebSocket(`wss://${import.meta.env.VITE_API_WS}/ws/dashboard/?token=${token}`);
         const token = getCookie("access_token");
+        const socket = new WebSocket(`wss://${import.meta.env.VITE_API_WS}/ws/dashboard/?token=${token}`);
         socket.onopen = () => {
             console.log("Connected");
         };
