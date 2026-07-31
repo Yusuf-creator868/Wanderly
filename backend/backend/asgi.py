@@ -19,11 +19,18 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.security.websocket import AllowedHostsOriginValidator
 from agency.routing import websocket_urlpatterns
 from agency.middleware import JWTAuthMiddleware
-
+from channels.security.websocket import OriginValidator
 
 application = ProtocolTypeRouter({
     "http": django_asgi_app,
-    "websocket": JWTAuthMiddleware(
-    URLRouter(websocket_urlpatterns),
-)
+    "websocket": OriginValidator(
+        JWTAuthMiddleware(
+            URLRouter(websocket_urlpatterns),
+        ),
+        [
+            "https://wanderly-ebon.vercel.app",
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+        ],
+    ),
 })
