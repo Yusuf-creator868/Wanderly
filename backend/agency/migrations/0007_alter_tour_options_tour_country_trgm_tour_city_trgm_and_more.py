@@ -2,7 +2,7 @@
 
 import django.contrib.postgres.indexes
 from django.db import migrations
-
+from django.contrib.postgres.operations import TrigramExtension
 
 class Migration(migrations.Migration):
 
@@ -10,21 +10,35 @@ class Migration(migrations.Migration):
         ('agency', '0006_rename_night_tour_nights'),
     ]
 
-    operations = [
-        migrations.AlterModelOptions(
-            name='tour',
-            options={'ordering': ['-created_at']},
+operations = [
+    TrigramExtension(),
+
+    migrations.AlterModelOptions(
+        name='tour',
+        options={'ordering': ['-created_at']},
+    ),
+    migrations.AddIndex(
+        model_name='tour',
+        index=django.contrib.postgres.indexes.GinIndex(
+            fields=['country'],
+            name='country_trgm',
+            opclasses=['gin_trgm_ops'],
         ),
-        migrations.AddIndex(
-            model_name='tour',
-            index=django.contrib.postgres.indexes.GinIndex(fields=['country'], name='country_trgm', opclasses=['gin_trgm_ops']),
+    ),
+    migrations.AddIndex(
+        model_name='tour',
+        index=django.contrib.postgres.indexes.GinIndex(
+            fields=['city'],
+            name='city_trgm',
+            opclasses=['gin_trgm_ops'],
         ),
-        migrations.AddIndex(
-            model_name='tour',
-            index=django.contrib.postgres.indexes.GinIndex(fields=['city'], name='city_trgm', opclasses=['gin_trgm_ops']),
+    ),
+    migrations.AddIndex(
+        model_name='tour',
+        index=django.contrib.postgres.indexes.GinIndex(
+            fields=['title'],
+            name='title_trgm',
+            opclasses=['gin_trgm_ops'],
         ),
-        migrations.AddIndex(
-            model_name='tour',
-            index=django.contrib.postgres.indexes.GinIndex(fields=['title'], name='title_trgm', opclasses=['gin_trgm_ops']),
-        ),
-    ]
+    ),
+]
