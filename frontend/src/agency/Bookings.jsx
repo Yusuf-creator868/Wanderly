@@ -7,15 +7,6 @@ import {
 import api from '../api'
 import { useTranslation } from "react-i18next"
 
-
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-    return null;
-}
-
-
 export default function BookingsPage() {
 
     const { t } = useTranslation()
@@ -150,8 +141,8 @@ export default function BookingsPage() {
 
 
     useEffect(() => {
-        const token = getCookie("access_token");
-        const socket = new WebSocket(`wss://${import.meta.env.VITE_API_WS}/ws/dashboard/?token=${token}`);
+        const socket = new WebSocket(`wss://${import.meta.env.VITE_API_WS}/ws/dashboard/`);
+
         socket.onopen = () => {
             console.log("Connected");
         };
