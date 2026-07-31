@@ -164,29 +164,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 ASGI_APPLICATION = 'backend.asgi.application'
 
 
-# if DEBUG:
-#     CHANNEL_LAYERS = {
-#       'default': {
-#             'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#             'CONFIG': {
-#                   'hosts': [('127.0.0.1', 6379)]
-#             }
-#       },
-# }
-
-
-
-# else:
-#     CHANNEL_LAYERS = {
-#         'default': {
-#             'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#             'CONFIG': {
-#                 'hosts': [os.environ.get("REDIS_URL")],
-#                 "capacity": 1500,
-#                 "expiry": 10,
-#             }
-#         },
-#     }
 if DEBUG:
     CHANNEL_LAYERS = {
         "default": {

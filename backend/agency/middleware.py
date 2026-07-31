@@ -6,46 +6,62 @@ from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 
 from django.contrib.auth.models import AnonymousUser
 from users.models import Users
+from urllib.parse import parse_qs
 
 
 class JWTAuthMiddleware(BaseMiddleware):
 
     async def __call__(self, scope, receive, send):
 
-        headers = dict(scope['headers'])
-
-        cookie_header = headers.get(
-            b'cookie',
-            b''
-        ).decode()
-
         token = None
 
-        for c in cookie_header.split('; '):
+    # ------------------------
+    # 1. Try query parameter
+    # ------------------------
+        query_string = parse_qs(scope["query_string"].decode())
 
-            if c.startswith('access_token='):
+        token = query_string.get("token", [None])[0]
 
-                token = c.split('=', 1)[1]
-                break
+    # ------------------------
+    # 2. Fallback to cookie
+    # ------------------------
+        if not token:
+
+            headers = dict(scope["headers"])
+
+            cookie_header = headers.get(
+                b"cookie",
+                b""
+            ).decode()
+
+            for c in cookie_header.split("; "):
+
+                if c.startswith("access_token="):
+                    token = c.split("=", 1)[1]
+                    break
+
+    # ------------------------
+    # Authenticate
+    # ------------------------
 
         if token:
 
             try:
                 validated_token = UntypedToken(token)
 
-                user_id = validated_token['user_id']
+                user_id = validated_token["user_id"]
 
                 user = await self.get_user(user_id)
 
-                scope['user'] = user
+                scope["user"] = user
 
             except (InvalidToken, TokenError):
 
-                scope['user'] = AnonymousUser()
+                scope["user"] = AnonymousUser()
 
         else:
 
-            scope['user'] = AnonymousUser()
+            scope["user"] = AnonymousUser()
 
         return await super().__call__(
             scope,
