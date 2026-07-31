@@ -179,9 +179,9 @@ export default function BookingsPage() {
             }
         };
 
-        socket.onclose = (event) => {
-            console.log("Disconnected", event);
-            
+        socket.onclose = () => {
+            console.log("Disconnected");
+            setTimeout(connectSocket, 3000);
         };
 
         return () => socket.close();
