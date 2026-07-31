@@ -23,9 +23,7 @@ from agency.middleware import JWTAuthMiddleware
 
 application = ProtocolTypeRouter({
     "http": django_asgi_app,
-    "websocket": AllowedHostsOriginValidator(
-        JWTAuthMiddleware(
-            URLRouter(websocket_urlpatterns),
-        )
-    ),
+    "websocket": JWTAuthMiddleware(
+    URLRouter(websocket_urlpatterns),
+)
 })
