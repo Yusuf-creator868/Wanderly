@@ -28,7 +28,7 @@ from .pagination import TourPagination
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_decode
 User = get_user_model()
-
+from django.core.cache import cache
 
 def get_client_ip(request):
 
@@ -418,22 +418,28 @@ def tours(request):
     country = None
 
     try:
-
         ip = get_client_ip(request)
 
-        response = requests.get(
-            f"https://ipapi.co/{ip}/json/",
-            timeout=2
+        location = cache.get(f"ip_location:{ip}")
+
+        if location is None:
+            response = requests.get(
+                f"https://ipapi.co/{ip}/json/",
+                timeout=2,
+            )
+
+        location = response.json()
+
+        cache.set(
+            f"ip_location:{ip}",
+            location,
+            60 * 60 * 24,  # 24 hours
         )
 
-        location_data = response.json()
-
-        city = location_data.get("city")
-        country = location_data.get("country_name")
-
+        city = location.get("city")
+        country = location.get("country_name")
 
     except Exception as e:
-
         print("Location Error:", e)
         
     # ------------------------
