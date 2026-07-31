@@ -141,7 +141,7 @@ export default function BookingsPage() {
 
 
     useEffect(() => {
-        const socket = new WebSocket("ws://localhost:8000/ws/dashboard/");
+        const socket = new WebSocket(`wss://${import.meta.env.VITE_API_WS}/ws/dashboard/`);
 
         socket.onopen = () => {
             console.log("Connected");
