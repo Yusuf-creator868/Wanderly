@@ -11,9 +11,9 @@ from users.models import Users
 class JWTAuthMiddleware(BaseMiddleware):
 
     async def __call__(self, scope, receive, send):
-
+        
         headers = dict(scope['headers'])
-
+        print(headers.get(b"cookie"))
         cookie_header = headers.get(
             b'cookie',
             b''
