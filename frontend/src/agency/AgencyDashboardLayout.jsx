@@ -314,7 +314,7 @@ export default function AgencyDashboardLayout() {
                                 </div>
 
                                 <img
-                                    src={`${MAIN_URL}${agencydata?.logo}`}
+                                    src={`${agencydata?.logo}`}
                                     alt='logo'
                                     className="w-15 h-15 sm:w-15 sm:h-15 rounded-2xl object-cover border-4 border-white bg-white shadow-sm"
                                 />

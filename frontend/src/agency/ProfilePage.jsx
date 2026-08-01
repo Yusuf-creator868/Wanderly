@@ -169,7 +169,7 @@ export default function AgencyProfile() {
             <div className="relative">
               {logoUrl || agency.logo ? (
                 <img
-                  src={logoUrl || `http://127.0.0.1:8000${agency.logo}`}
+                  src={logoUrl || `${agency.logo}`}
                   alt={agency.agency_name}
                   className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-4 border-white bg-white shadow-sm"
                 />

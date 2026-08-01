@@ -235,7 +235,7 @@ export default function MyTours() {
                         <div key={tour.id} className="bg-white border border-slate-200 rounded-2xl p-4">
                             <div className="flex items-center gap-3">
                                 <img
-                                    src={`${MAIN_URL}${tour.cover_image}`}
+                                    src={`${tour.cover_image}`}
                                     alt=""
                                     className="w-12 h-12 rounded-xl object-cover shrink-0"
                                 />
