@@ -160,7 +160,7 @@ export default function MyTours() {
                                         <td className="px-5 py-3">
                                             <div className="flex items-center gap-3">
                                                 <img
-                                                    src={`${MAIN_URL}${tour.cover_image}`}
+                                                    src={`${tour.cover_image}`}
                                                     alt=""
                                                     className="w-11 h-11 rounded-xl object-cover shrink-0"
                                                 />
