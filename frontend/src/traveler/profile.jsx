@@ -51,23 +51,24 @@ export default function TravelerProfilePage({
     }
 
     const saveEditing = async () => {
-        setIsEditing(false)
-        api.post('user-info/', currentTraveler)
-            .then(res => {
-                await loadUser();
+        try {
+            setIsEditing(false);
 
-                if (from) {
-                    nav(from);
-                }else{
-                    nav('/')
-                }
+            const res = await api.post("user-info/", currentTraveler);
 
-                console.log(res.data)
-            })
-            .catch(err => {
-                console.log(err.message)
-            })
-    }
+            await loadUser();
+
+            console.log(res.data);
+
+            if (from) {
+                nav(from);
+            } else {
+                nav("/");
+            }
+        } catch (err) {
+            console.log(err.message);
+        }
+    };
 
     const updateField = (field) => (e) => {
         setCurrentTraveler((prev) => ({ ...prev, [field]: e.target.value }))
