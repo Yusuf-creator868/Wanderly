@@ -515,7 +515,7 @@ export default function TravelerProfilePage({
                         </p>
 
                         <button
-                            onClick={onExplore}
+                            onClick={() => nav("/search")}
                             className="
                                 group inline-flex items-center gap-2
                                 mt-8 px-7 py-3.5 rounded-full
