@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Mail, Phone, BadgeCheck, Pencil, MapPin, CalendarDays, Users, Building2, AlertCircle, ArrowUpRight, ArrowRight, Check, X, ChevronDown, User } from "lucide-react"
 import api, { MAIN_URL } from "../api"
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 const STATUS_STYLES = {
     pending: { label: "Pending", dot: "bg-amber-500", bg: "bg-amber-50", text: "text-amber-700" },
@@ -34,7 +34,9 @@ export default function TravelerProfilePage({
     })
     const [bookings, setBookings] = useState([])
     const [isEditing, setIsEditing] = useState(false)
-
+    const nav = useNavigate()
+    const loc = useLocation()
+    const from = loc.state?.from;
     // Tracks which booking card currently has its travelers panel open
     const [openTravelersId, setOpenTravelersId] = useState(null)
 
@@ -50,6 +52,9 @@ export default function TravelerProfilePage({
         setIsEditing(false)
         api.post('user-info/', currentTraveler)
             .then(res => {
+                if (from) {
+                    nav(from);
+                }
                 console.log(res.data)
             })
             .catch(err => {
