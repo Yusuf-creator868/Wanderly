@@ -293,7 +293,7 @@ export default function TravelerProfilePage({
                                     {/* IMAGE */}
                                     <div className="relative w-full sm:w-[300px] md:w-[340px] h-56 sm:h-auto shrink-0 overflow-hidden">
                                         <img
-                                            src={`${MAIN_URL}${booking.tour?.cover_image ?? ""}`}
+                                            src={`${booking.tour?.cover_image ?? ""}`}
                                             alt={booking.tour?.title}
                                             className="
                                                 w-full h-full object-cover
