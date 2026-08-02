@@ -50,7 +50,7 @@ export default function TravelerProfilePage({
         setIsEditing(false)
     }
 
-    const saveEditing = async  () => {
+    const saveEditing = async () => {
         setIsEditing(false)
         api.post('user-info/', currentTraveler)
             .then(res => {
