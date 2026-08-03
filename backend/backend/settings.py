@@ -55,8 +55,7 @@ CELERY_TIMEZONE = "UTC"
 
 ALLOWED_HOSTS = os.getenv(
     "ALLOWED_HOSTS",
-    "localhost,127.0.0.1",
-    "api.wanderly.uz",
+    "localhost,127.0.0.1,api.wanderly.uz",
 ).split(",")
 
 if not DEBUG:
