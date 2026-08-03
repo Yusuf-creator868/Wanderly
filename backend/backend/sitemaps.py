@@ -27,7 +27,7 @@ class TourSitemap(Sitemap):
         return Tour.objects.filter(status="published")
 
     def lastmod(self, obj):
-        return obj.updated_at
+        return obj.created_at
 
     def location(self, obj):
         return f"{settings.SITE_URL}/details/{obj.pk}"
