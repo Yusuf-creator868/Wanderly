@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticViewSitemap, TourSitemap
+from .views import sitemap
 
 sitemaps = {
     "static": StaticViewSitemap,
@@ -31,13 +32,7 @@ urlpatterns = [
     path('_nested_admin/', include('nested_admin.urls')),
     path('api/', include('users.urls')),
     path('api/', include('agency.urls')),
-    
-    path(
-        "sitemap.xml",
-        sitemap,
-        {"sitemaps": sitemaps},
-        name="django.contrib.sitemaps.views.sitemap",
-    ),
+    path("sitemap.xml", sitemap),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
