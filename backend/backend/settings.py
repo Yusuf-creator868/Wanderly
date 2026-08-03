@@ -99,6 +99,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
