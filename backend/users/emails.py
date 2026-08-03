@@ -14,7 +14,7 @@ def send_verification_email(user):
     verify_link = f"{settings.FRONTEND_URL}/verify-email/{uid}/{token}/"
 
     resend.Emails.send({
-        "from": "onboarding@resend.dev",  # switch to your verified domain later, e.g. "noreply@yourapp.com"
+        "from": "Wanderly <noreply@wanderly.uz>",  # switch to your verified domain later, e.g. "noreply@yourapp.com"
         "to": [user.email],
         "subject": "Verify your email",
         "html": f"""
