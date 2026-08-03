@@ -32,6 +32,7 @@ RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 FRONTEND_URL = os.getenv("FRONTEND_URL", "http://127.0.0.1:5173")
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "noreply@yourapp.com"
+SITE_URL = os.getenv("SITE_URL", "http://127.0.0.1:5173")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
@@ -95,6 +96,7 @@ INSTALLED_APPS = [
     'translations',
     'config',
     "django_celery_beat",
+    "django.contrib.sitemaps",
     
 ]
 

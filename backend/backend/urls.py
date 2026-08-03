@@ -18,12 +18,26 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap, TourSitemap
+
+sitemaps = {
+    "static": StaticViewSitemap,
+    "tours": TourSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('_nested_admin/', include('nested_admin.urls')),
     path('api/', include('users.urls')),
     path('api/', include('agency.urls')),
+    
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
