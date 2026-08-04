@@ -372,6 +372,9 @@ def get_favorites(request):
 @api_view(["GET"])
 def get_tours(request):
     fav_code = request.query_params.get("fav_code")
+    query = request.GET.get("q", "")
+    print("RAW QUERY REPR:", repr(query))
+    print("RAW QUERY BYTES:", query.encode('utf-8', errors='replace'))
 
     favorite_qs = FavoriteItems.objects.filter(
         favcart__fav_code=fav_code,
