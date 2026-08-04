@@ -477,27 +477,18 @@ def tours(request):
     if query:
 
         vector = (
-        SearchVector("country", weight="A") +
-        SearchVector("city", weight="A") +
-        SearchVector("title", weight="B") +
+        SearchVector("country", weight="A", config = "simple") +
+        SearchVector("city", weight="A", config = "simple") +
+        SearchVector("title", weight="B", config = "simple") +
 
-        SearchVector(
-            "translations__country",
-            weight="A",
-        ) +
+        SearchVector( "translations__country", weight="A", config = "simple") +
 
-        SearchVector(
-            "translations__city",
-            weight="A",
-        ) +
+        SearchVector( "translations__city", weight="A", config = "simple") +
 
-        SearchVector(
-            "translations__title",
-            weight="B",
-        )
+        SearchVector( "translations__title", weight="B", config = "simple")
     )
 
-        search_query = SearchQuery(query)
+        search_query = SearchQuery(query, config = "simple")
 
         queryset = queryset.filter(
             Q(translations__language=lang) |
