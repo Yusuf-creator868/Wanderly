@@ -125,12 +125,21 @@ Rules:
 - Keep all ids exactly the same.
 - Never rename JSON keys.
 - Never change the JSON structure.
-- Do NOT translate:
-  - hotel names
-  - company names
-  - city names
-  - country names
-  - people's names
+
+- Hotel names, company names and people's names MUST NOT be translated.
+
+- Country names MUST be translated into their standard localized names.
+  Example:
+  Turkey → Турция → Turkiya
+  Germany → Германия → Germaniya
+
+- City names should use the standard localized spelling for each language.
+  Example:
+  Moscow → Москва → Moskva
+  Paris → Париж → Parij
+  Istanbul → Стамбул → Istanbul
+
+- Use official, commonly used geographic names.
 - Use natural tourism language.
 - Return JSON only.
 """
