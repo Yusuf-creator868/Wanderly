@@ -8,15 +8,37 @@ from translations.mixins import TranslationMixin
 from django.db.models import Sum
 User = get_user_model()
 
+
 #  AgencySerializer -------->
+
+class AgencyVerificationDocumentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AgencyVerificationDocument
+        fields = "__all__"
+        read_only_fields = ["agency", "uploaded_at"]
+        
+        
 class AgencySerializer(serializers.ModelSerializer):
+
+    verification_documents = AgencyVerificationDocumentSerializer(
+        many=True,
+        read_only=True
+    )
+
     class Meta:
         model = Agency
-        fields = '__all__'
-        read_only_fields = ['slug', 'plan', 'verification_status', 'published', 'created_at']
+        fields = "__all__"
+        read_only_fields = [
+            "slug",
+            "plan",
+            "verification_status",
+            "published",
+            "created_at",
+        ]
         
-        
-#  AgencySerializer -------->
+
+
+
 class IncludedSerializer( serializers.ModelSerializer):
     
 

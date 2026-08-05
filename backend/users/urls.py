@@ -30,6 +30,8 @@ urlpatterns += [
     path("admin/users/", get_users),
 
     path("admin/agencies/", get_agencies),
+    
+    path( "admin/agencies/<int:pk>/verification/", change_agency_verification_status),
 
     path("admin/tours/", get_admin_tours),
 

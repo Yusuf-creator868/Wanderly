@@ -13,6 +13,9 @@ from .admin_serializers import (
     AdminBookingSerializer,
 )
 from .user_pagination import *
+from django.shortcuts import get_object_or_404
+
+
 
 @api_view(["GET"])
 @permission_classes([IsSuperAdmin])
@@ -45,6 +48,7 @@ def get_agencies(request):
     agencies = (
         Agency.objects
         .select_related("owner")
+        .prefetch_related("verification_documents")
         .annotate(total_tours=Count("tour"))
         .order_by("-created_at")
     )
@@ -56,6 +60,30 @@ def get_agencies(request):
     serializer = AdminAgencySerializer(page, many=True)
 
     return paginator.get_paginated_response(serializer.data)
+
+@api_view(["PATCH"])
+@permission_classes([IsSuperAdmin])
+def change_agency_verification_status(request, pk):
+    agency = get_object_or_404(Agency, pk=pk)
+
+    status = request.data.get("verification_status")
+
+    allowed = ["pending", "verified", "rejected"]
+
+    if status not in allowed:
+        return Response(
+            {"error": "Invalid verification status."},
+            status=400,
+        )
+
+    agency.verification_status = status
+    agency.published = status == "verified"
+    agency.save(update_fields=["verification_status", "published"])
+
+    return Response({
+        "success": True,
+        "verification_status": agency.verification_status,
+    })
 
 
 @api_view(["GET"])

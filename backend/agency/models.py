@@ -113,6 +113,25 @@ class Agency(models.Model):
     
     
     
+class AgencyVerificationDocument(models.Model):
+
+    agency = models.ForeignKey(
+        Agency,
+        on_delete=models.CASCADE,
+        related_name="verification_documents"
+    )
+
+    document = models.ImageField(
+        upload_to="agency_verification/"
+    )
+
+    uploaded_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return f"{self.agency.agency_name}"
+    
     
 
 # Tour -------------------->

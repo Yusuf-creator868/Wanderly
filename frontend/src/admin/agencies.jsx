@@ -5,8 +5,12 @@ import {
   LuServerCrash,
   LuChevronLeft,
   LuChevronRight,
+  LuX,
+  LuCheck,
+  LuImageOff,
+  LuLoaderCircle,
 } from "react-icons/lu";
-import api from "../api";
+import api, { MAIN_URL } from "../api";
 
 /* ------------------------------------------------------------------ */
 /* Config                                                              */
@@ -119,7 +123,7 @@ function PublishedBadge({ isPublished }) {
 /* Desktop / tablet table                                              */
 /* ------------------------------------------------------------------ */
 
-function AgenciesTable({ agencies, isLoading }) {
+function AgenciesTable({ agencies, isLoading, onRowClick }) {
   return (
     <div className="hidden overflow-x-auto rounded-2xl border border-white/10 bg-[#0d1b2a] shadow-sm md:block">
       <table className="w-full min-w-[1020px] border-collapse text-left text-sm">
@@ -146,7 +150,8 @@ function AgenciesTable({ agencies, isLoading }) {
             : agencies?.map((agency) => (
                 <tr
                   key={agency.id}
-                  className="transition-colors duration-200 hover:bg-white/[0.03]"
+                  onClick={() => onRowClick(agency)}
+                  className="cursor-pointer transition-colors duration-200 hover:bg-white/[0.03]"
                 >
                   <td className="px-5 py-3.5">
                     <AgencyLogo name={agency.agency_name} logoUrl={agency.logo} />
@@ -184,7 +189,7 @@ function AgenciesTable({ agencies, isLoading }) {
 /* Mobile cards                                                        */
 /* ------------------------------------------------------------------ */
 
-function AgencyCards({ agencies, isLoading }) {
+function AgencyCards({ agencies, isLoading, onCardClick }) {
   return (
     <div className="space-y-3 md:hidden">
       {isLoading
@@ -206,7 +211,8 @@ function AgencyCards({ agencies, isLoading }) {
         : agencies?.map((agency) => (
             <div
               key={agency.id}
-              className="rounded-2xl border border-white/10 bg-[#0d1b2a] p-4 shadow-sm transition-colors duration-200 hover:bg-white/[0.03]"
+              onClick={() => onCardClick(agency)}
+              className="cursor-pointer rounded-2xl border border-white/10 bg-[#0d1b2a] p-4 shadow-sm transition-colors duration-200 hover:bg-white/[0.03]"
             >
               <div className="flex items-center gap-3">
                 <AgencyLogo name={agency.agency_name} logoUrl={agency.logo} size={40} />
@@ -247,6 +253,154 @@ function AgencyCards({ agencies, isLoading }) {
               </dl>
             </div>
           ))}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Agency detail modal                                                 */
+/* ------------------------------------------------------------------ */
+
+function AgencyDetailModal({ agency, onClose, onStatusChange }) {
+  const [updating, setUpdating] = useState(null); // "verified" | "rejected" | null
+
+  if (!agency) return null;
+
+  const documents = agency.verification_documents || [];
+
+  const handleDecision = async (nextStatus) => {
+    setUpdating(nextStatus);
+    try {
+      const res = await api.patch(`admin/agencies/${agency.id}/verification/`, {
+        verification_status: nextStatus,
+      });
+      onStatusChange(agency.id, res.data.verification_status);
+    } catch (err) {
+      console.log(err.response?.data);
+      console.log(err);
+    } finally {
+      setUpdating(null);
+    }
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+      onClick={onClose}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0d1b2a] shadow-xl"
+      >
+        {/* Header */}
+        <div className="flex items-start justify-between gap-4 border-b border-white/10 px-6 py-4">
+          <div className="flex items-center gap-3">
+            <AgencyLogo name={agency.agency_name} logoUrl={agency.logo} size={44} />
+            <div>
+              <h2 className="text-base font-semibold text-white">{agency.agency_name}</h2>
+              <p className="text-xs text-gray-500">{agency.owner}</p>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="rounded-lg p-1.5 text-gray-500 transition-colors duration-200 hover:bg-white/5 hover:text-white"
+          >
+            <LuX className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Body */}
+        <div className="flex-1 overflow-y-auto px-6 py-5">
+          <div className="flex flex-wrap items-center gap-2">
+            <VerificationBadge status={agency.verification_status} />
+            <PublishedBadge isPublished={agency.published} />
+          </div>
+
+          <dl className="mt-4 grid grid-cols-2 gap-y-3 text-sm sm:grid-cols-3">
+            <div>
+              <dt className="text-xs text-gray-500">Email</dt>
+              <dd className="mt-0.5 truncate text-gray-200">{agency.email || "—"}</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-gray-500">Phone</dt>
+              <dd className="mt-0.5 text-gray-200">{agency.phone || "—"}</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-gray-500">Country</dt>
+              <dd className="mt-0.5 text-gray-200">{agency.country || "—"}</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-gray-500">Total Tours</dt>
+              <dd className="mt-0.5 text-gray-200">{agency.total_tours ?? 0} Tours</dd>
+            </div>
+            <div>
+              <dt className="text-xs text-gray-500">Joined</dt>
+              <dd className="mt-0.5 text-gray-200">{formatDate(agency.created_at)}</dd>
+            </div>
+          </dl>
+
+          <div className="mt-6">
+            <h3 className="text-sm font-medium text-white">Verification documents</h3>
+            <p className="mt-0.5 text-xs text-gray-500">
+              Licenses or certificates submitted by the agency
+            </p>
+
+            {documents.length === 0 ? (
+              <div className="mt-3 flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-white/10 py-10 text-center">
+                <LuImageOff className="h-6 w-6 text-gray-600" />
+                <p className="text-xs text-gray-500">No documents submitted.</p>
+              </div>
+            ) : (
+              <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {documents.map((doc) => (
+                  <a
+                    key={doc.id}
+                    href={`${MAIN_URL}${doc.document}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20"
+                  >
+                    <img
+                      src={`${MAIN_URL}${doc.document}`}
+                      alt="Verification document"
+                      className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+                    />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Footer actions */}
+        <div className="flex items-center justify-end gap-3 border-t border-white/10 px-6 py-4">
+          <button
+            onClick={() => handleDecision("rejected")}
+            disabled={updating !== null || agency.verification_status === "rejected"}
+            className="flex items-center gap-1.5 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-2 text-sm font-medium text-red-400 transition-colors duration-200 hover:bg-red-400/20 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {updating === "rejected" ? (
+              <LuLoaderCircle className="h-4 w-4 animate-spin" />
+            ) : (
+              <LuX className="h-4 w-4" />
+            )}
+            Reject
+          </button>
+          <button
+            onClick={() => handleDecision("verified")}
+            disabled={updating !== null || agency.verification_status === "verified"}
+            className="flex items-center gap-1.5 rounded-xl border border-green-400/30 bg-green-400/10 px-4 py-2 text-sm font-medium text-green-400 transition-colors duration-200 hover:bg-green-400/20 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            {updating === "verified" ? (
+              <LuLoaderCircle className="h-4 w-4 animate-spin" />
+            ) : (
+              <LuCheck className="h-4 w-4" />
+            )}
+            Verify
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -345,6 +499,7 @@ export default function AgenciesPage() {
     previous: null,
     results: [],
   });
+  const [selectedAgency, setSelectedAgency] = useState(null);
 
   const fetchAgencies = useCallback((pageNumber, signal) => {
     setStatus("loading");
@@ -377,6 +532,19 @@ export default function AgenciesPage() {
     setPage(nextPage);
   };
 
+  // Update the row/card in place and keep the modal's copy in sync
+  const handleStatusChange = (agencyId, newStatus) => {
+    setData((prev) => ({
+      ...prev,
+      results: prev.results.map((a) =>
+        a.id === agencyId ? { ...a, verification_status: newStatus } : a
+      ),
+    }));
+    setSelectedAgency((prev) =>
+      prev && prev.id === agencyId ? { ...prev, verification_status: newStatus } : prev
+    );
+  };
+
   const isLoading = status === "loading";
   const isError = status === "error";
   const isEmpty = status === "success" && data?.results?.length === 0;
@@ -406,8 +574,16 @@ export default function AgenciesPage() {
         <EmptyState />
       ) : (
         <>
-          <AgenciesTable agencies={data.results} isLoading={isLoading} />
-          <AgencyCards agencies={data.results} isLoading={isLoading} />
+          <AgenciesTable
+            agencies={data.results}
+            isLoading={isLoading}
+            onRowClick={setSelectedAgency}
+          />
+          <AgencyCards
+            agencies={data.results}
+            isLoading={isLoading}
+            onCardClick={setSelectedAgency}
+          />
           <Pagination
             page={page}
             hasPrevious={Boolean(data.previous)}
@@ -417,6 +593,12 @@ export default function AgenciesPage() {
           />
         </>
       )}
+
+      <AgencyDetailModal
+        agency={selectedAgency}
+        onClose={() => setSelectedAgency(null)}
+        onStatusChange={handleStatusChange}
+      />
     </div>
   );
 }

@@ -25,6 +25,7 @@ import ToursPage from "./admin/tours";
 import BookinAdmingsPage from "./admin/bookings";
 import AdminDashboardPage from "./admin/dashboardadmin";
 import AdminRoute from "./admin/admin_route";
+import GuestRoute from "./guestRoute";
 
 const router = createBrowserRouter([
     {
@@ -38,8 +39,8 @@ const router = createBrowserRouter([
 
         children: [
             { index: true, element: <Pages /> },
-            { path: "login", element: <LoginPage /> },
-            { path: "register", element: <RegisterPage /> },
+            { path: "login", element: <GuestRoute><LoginPage /></GuestRoute> },
+            { path: "register", element: <GuestRoute><RegisterPage /></GuestRoute> },
             { path: "/verify-email/:uid/:token", element: <VerifyEmailPage /> },
             { path: "search", element: <SearchToursPage /> },
             { path: "favorites", element: <FavoritesPage /> },

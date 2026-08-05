@@ -9,6 +9,7 @@ urlpatterns = [
     
     
     path("agency/<slug:slug>/", agencyinfo),
+    path( "agency/verification-document/<int:pk>/", delete_verification_document),
     path('create_tour/', create_tour),
     
     path('tour_info/<uuid:pk>/', tour_info),

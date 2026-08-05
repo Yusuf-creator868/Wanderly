@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import *
 
 
-admin.site.register([ Agency,])
+admin.site.register([ Agency, AgencyVerificationDocument])
 
 
 class TourView(nested_admin.NestedTabularInline):

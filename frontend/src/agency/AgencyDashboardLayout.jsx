@@ -85,11 +85,21 @@ export default function AgencyDashboardLayout() {
 
 
     const createDraft = async () => {
-        const res = await api.post("/create_tour/");
+        try {
+            const res = await api.post("/create_tour/");
 
-        const id = res.data.id;
+            navigate(`/overview/createTour/${res.data.id}`);
+        } catch (err) {
+            if (err.response?.status === 403) {
+                alert(
+                    "Your agency must be verified before creating tours. Please upload your verification documents and wait for approval."
+                );
+                return;
+            }
 
-        navigate(`/overview/createTour/${id}`);
+            console.error(err);
+            alert("Something went wrong. Please try again.");
+        }
     };
 
     return (

@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.db.models import Min
 
 from users.models import Users, Booking
-from agency.models import Agency, Tour
+from agency.models import Agency, Tour, AgencyVerificationDocument
 
 
 class AdminUserSerializer(serializers.ModelSerializer):
@@ -19,11 +19,21 @@ class AdminUserSerializer(serializers.ModelSerializer):
             "date_joined",
         ]
 
+class AgencyVerificationDocumentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AgencyVerificationDocument
+        fields = "__all__"
+        read_only_fields = ["agency", "uploaded_at"]
+        
 
 class AdminAgencySerializer(serializers.ModelSerializer):
     owner = serializers.CharField(source="owner.full_name")
 
     total_tours = serializers.SerializerMethodField()
+    verification_documents = AgencyVerificationDocumentSerializer(
+        many=True,
+        read_only=True,
+    )
 
     class Meta:
         model = Agency
@@ -34,6 +44,7 @@ class AdminAgencySerializer(serializers.ModelSerializer):
             "country",
             "verification_status",
             "published",
+            'verification_documents',
             'email',
             'phone',
             "is_active",

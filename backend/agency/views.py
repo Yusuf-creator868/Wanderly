@@ -16,33 +16,83 @@ def my_agency(request):
     serializer = AgencySerializer(agency)
     return Response(serializer.data)
 
+
+
 @api_view(["GET", "PATCH"])
 @permission_classes([IsAuthenticated])
 def agencyinfo(request, slug):
     agency = get_object_or_404(Agency, slug=slug)
 
     if request.method == "GET":
-        serializer = AgencySerializer(agency)
+        serializer = AgencySerializer(
+            agency,
+            context={"request": request},
+        )
         return Response(serializer.data)
 
     serializer = AgencySerializer(
         agency,
         data=request.data,
         partial=True,
+        context={"request": request},
     )
 
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data)
+
+        files = request.FILES.getlist("verification_documents")
+
+        for file in files:
+            AgencyVerificationDocument.objects.create(
+                agency=agency,
+                document=file,
+            )
+
+        return Response(
+            AgencySerializer(
+                agency,
+                context={"request": request},
+            ).data
+        )
 
     return Response(serializer.errors, status=400)
+
+
+@api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
+def delete_verification_document(request, pk):
+    document = get_object_or_404(AgencyVerificationDocument, id=pk)
+    document.delete()
+    return Response(status=204)
+
+
         
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def create_tour(request):
-    tour = Tour.objects.create(agency = request.user.agency, status = 'draft')
-    return Response({'id': tour.id}, status=201)
+    agency = request.user.agency
 
+    if agency.verification_status != "verified":
+        return Response(
+            {
+                "verified": False,
+                "message": "Your agency must be verified before creating tours."
+            },
+            status=403,
+        )
+
+    tour = Tour.objects.create(
+        agency=agency,
+        status="draft",
+    )
+
+    return Response(
+        {
+            "verified": True,
+            "id": tour.id,
+        },
+        status=201,
+    )
 
 
 @api_view(["PATCH"])
