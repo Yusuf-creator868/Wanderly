@@ -356,13 +356,13 @@ function AgencyDetailModal({ agency, onClose, onStatusChange }) {
                 {documents.map((doc) => (
                   <a
                     key={doc.id}
-                    href={`${MAIN_URL}${doc.document}`}
+                    href={`${doc.document}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black/20"
                   >
                     <img
-                      src={`${MAIN_URL}${doc.document}`}
+                      src={`${doc.document}`}
                       alt="Verification document"
                       className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
                     />
