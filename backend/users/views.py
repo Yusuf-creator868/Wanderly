@@ -493,10 +493,7 @@ def tours(request):
 
         search_query = SearchQuery(query, config = "simple")
 
-        queryset = queryset.filter(
-            Q(translations__language=lang) |
-            Q(translations__isnull=True)
-            ).annotate(
+        queryset = queryset.annotate(
             
             rank=SearchRank(vector, search_query),
 
