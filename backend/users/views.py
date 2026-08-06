@@ -29,6 +29,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_decode
 User = get_user_model()
 from django.core.cache import cache
+from translations.models import TourTranslation
 
 def get_client_ip(request):
 
@@ -479,42 +480,65 @@ def tours(request):
 
     if query:
 
+    # Tours matching translated fields
+        translated_ids = (
+            TourTranslation.objects.annotate(
+            similarity=(
+                TrigramSimilarity("title", query) +
+                TrigramSimilarity("country", query) +
+                TrigramSimilarity("city", query)
+        )
+    )
+    .filter(
+        similarity__gt=0.3
+    )
+    .order_by(
+        Case(
+            When(language=lang, then=0),
+            default=1,
+        ),
+        "-similarity",
+    )
+    .values_list("tour_id", flat=True)
+)
+
         vector = (
-        SearchVector("country", weight="A", ) +
-        SearchVector("city", weight="A", ) +
-        SearchVector("title", weight="B", ) +
-
-        SearchVector( "translations__country", weight="A",) +
-
-        SearchVector( "translations__city", weight="A",) +
-
-        SearchVector( "translations__title", weight="B",)
+            SearchVector("country", weight="A") +
+            SearchVector("city", weight="A") +
+            SearchVector("title", weight="B")
     )
 
-        search_query = SearchQuery(query, config = "simple")
+        search_query = SearchQuery(
+            query,
+            config="simple",
+        )
 
         queryset = queryset.annotate(
-            
-            rank=SearchRank(vector, search_query),
 
-            similarity = (
-                    TrigramSimilarity("country", query) +
-                    TrigramSimilarity("city", query) +
-                    TrigramSimilarity("title", query) +
+            rank=SearchRank(
+                vector,
+                search_query,
+            ),
 
-                    TrigramSimilarity("translations__country", query) +
-                    TrigramSimilarity("translations__city", query) +
-                    TrigramSimilarity("translations__title", query)
-                )
+        similarity=(
+            TrigramSimilarity("country", query) +
+            TrigramSimilarity("city", query) +
+            TrigramSimilarity("title", query)
+        ),
 
-        ).filter(
-            Q(rank__gt=0.1) |
-            Q(similarity__gt=0.3)
-        ).distinct().order_by(
-            '-location_boost',
-            '-rank',
-            '-similarity'
-        )
+    ).filter(
+
+        Q(id__in=translated_ids) |
+        Q(rank__gt=0.1) |
+        Q(similarity__gt=0.3)
+
+    ).order_by(
+
+        "-location_boost",
+        "-rank",
+        "-similarity",
+
+    )
         
     else:
         queryset = queryset.order_by(
