@@ -510,7 +510,7 @@ def tours(request):
         ).filter(
             Q(rank__gt=0.1) |
             Q(similarity__gt=0.3)
-        ).order_by(
+        ).distinct().order_by(
             '-location_boost',
             '-rank',
             '-similarity'
